@@ -1,0 +1,13 @@
+what did I learn today:
+VCS: version control system
+git init: create .git in a file
+git add file
+git commit -m "message"
+git push -u origin master: origin is the server name, master is the branch name. -u means this is the default setting.
+
+Research Diary is setted with the bashsc file
+
+How to learn a software?
+S1. What is it in a nutshell?
+S2. How does it compared to its competitors? Did it learn something from them?
+S3. The reason why it is designed like that.
