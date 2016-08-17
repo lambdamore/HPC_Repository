@@ -1,0 +1,8 @@
+what did I learn today:
+VCS: version control system
+git init: create .git in a file
+git add file
+git commit -m "message"
+git push -u origin master: origin is the server name, master is the branch name. -u means this is the default setting.
+
+Research Diary is setted with the bashsc file
