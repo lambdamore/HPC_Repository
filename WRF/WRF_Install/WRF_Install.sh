@@ -132,6 +132,8 @@ cd jasper-1.900.1
 make
 make install
 cd ..
+rm *.tar.gz
+rm -rf *.*
 
 cd ..
 cd ..
@@ -173,24 +175,29 @@ v_mpi=$(mpirun  ./a.out)
 success_test $v_mpi
 
 cd ..
+rm -rf TEST
+
+
 cd WRF
 wget -q http://www2.mmm.ucar.edu/wrf/src/WRFV3.8.TAR.gz
 gunzip WRFV3.8.TAR.gz
 tar -xf WRFV3.8.TAR
 cd WRFV3
+./clean -a
 export WRF_EM_CORE=1
 echo set timeout 30 >>auto_configure
 echo spawn ./configure >>auto_configure
-echo expect ":" >>auto_configure
-echo send 34 >>auto_configure
-echo expect ":" >>auto_configure
-echo send 1 >>auto_configure
+echo expect "\"*1-71* :\"" >>auto_configure
+echo send 34\\n >>auto_configure
+echo expect "\"*default 1*\"" >>auto_configure
+echo send 1\\n >>auto_configure
 echo interact >>auto_configure
 expect auto_configure
 
-./compile em_real >& log.compile
+./compile em_real
+
 v_exe=$(ls -ls main/*.exe);
-if [ $v_exe == *"wrf.exe"* ] && [ $v_exe == *"real.exe"* ] && [ $v_exe == *"ndown.exe"* ] && [ $v_exe == *"tc.exe"* ]
+if [[ $v_exe == *"wrf.exe"* ]] && [[ $v_exe == *"real.exe"* ]] && [[ $v_exe == *"ndown.exe"* ]] && [[ $v_exe == *"tc.exe"* ]]
 then
         echo "wrf.exe exists!" >>$main/wrf_log;
 else
@@ -210,17 +217,16 @@ export JASPERINC="$DIR/grib2/include"
 
 echo set timeout 30 >>auto_configure
 echo spawn ./configure >>auto_configure
-echo expect ":" >>auto_configure
-echo send 1 >>auto_configure
+echo expect "\"*1-40*\"" >>auto_configure
+echo send 1\\n >>auto_configure
 echo interact >>auto_configure
 expect auto_configure
 
 
-./configure
 WRF_DIR = ../WRFV3
-./compile >& log.compile
+./compile
 v_exe=$(ls -ls *.exe);
-if [ $v_exe == *"geogrid.exe"* ] && [ $v_exe == *"ungrib.exe"* ] && [ $v_exe == *"metgrid.exe"* ]
+if [[ $v_exe == *"geogrid.exe"* ]] && [[ $v_exe == *"ungrib.exe"* ]] && [[ $v_exe == *"metgrid.exe"* ]]
 then
         echo "$* exists!" >>$main/wrf_log;
 else
@@ -236,5 +242,4 @@ tar -xf geog.tar
 mv geog WPS_GEOG
 
 rm *.TAR
-
 
