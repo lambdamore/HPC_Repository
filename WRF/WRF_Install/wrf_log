@@ -1,0 +1,28 @@
+gfortran exists!
+cpp exists!
+gcc exists!
+SUCCESS test 1 fortran only fixed format
+Assume Fortran 2003: has FLUSH, ALLOCATABLE derived type, and ISO C Binding SUCCESS test 2 fortran only free format
+C function called by Fortran Values are xx = 2.00 and ii = 1 SUCCESS test 4 fortran calling c
+SUCCESS csh test
+SUCCESS perl test
+SUCCESS sh test
+netcdf directory correct
+MPI directory correct
+C function called by Fortran Values are xx = 2.00 and ii = 1 SUCCESS test 1 fortran + c + netcdf
+C function called by Fortran Values are xx = 2.00 and ii = 1 status = 2 SUCCESS test 2 fortran + c + netcdf + mpi
+gfortran exists!
+cpp exists!
+gcc exists!
+SUCCESS test 1 fortran only fixed format
+Assume Fortran 2003: has FLUSH, ALLOCATABLE derived type, and ISO C Binding SUCCESS test 2 fortran only free format
+C function called by Fortran Values are xx = 2.00 and ii = 1 SUCCESS test 4 fortran calling c
+SUCCESS csh test
+SUCCESS perl test
+SUCCESS sh test
+netcdf directory correct
+MPI directory correct
+C function called by Fortran Values are xx = 2.00 and ii = 1 SUCCESS test 1 fortran + c + netcdf
+C function called by Fortran Values are xx = 2.00 and ii = 1 status = 2 SUCCESS test 2 fortran + c + netcdf + mpi
+wrf.exe exists!
+ exists!

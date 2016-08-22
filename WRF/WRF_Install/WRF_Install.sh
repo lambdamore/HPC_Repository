@@ -183,7 +183,7 @@ wget -q http://www2.mmm.ucar.edu/wrf/src/WRFV3.8.TAR.gz
 gunzip WRFV3.8.TAR.gz
 tar -xf WRFV3.8.TAR
 cd WRFV3
-./clean -a
+./clean 
 export WRF_EM_CORE=1
 echo set timeout 30 >>auto_configure
 echo spawn ./configure >>auto_configure
@@ -194,6 +194,7 @@ echo send 1\\n >>auto_configure
 echo interact >>auto_configure
 expect auto_configure
 
+echo "configured"
 ./compile em_real
 
 v_exe=$(ls -ls main/*.exe);
