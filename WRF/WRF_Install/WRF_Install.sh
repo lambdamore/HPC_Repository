@@ -195,6 +195,7 @@ echo interact >>auto_configure
 expect auto_configure
 
 echo "configured"
+
 ./compile em_real
 
 v_exe=$(ls -ls main/*.exe);
