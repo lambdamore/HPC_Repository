@@ -1,0 +1,4 @@
+Use 
+"python -m site --user-site"
+to find out the local python lib directory
+
