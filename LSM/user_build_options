@@ -1,0 +1,22 @@
+#=============================================================================================
+#  Options for Linux with gfortran (not fully tested)
+#=============================================================================================
+
+COMPILERF90    =       gfortran
+FREESOURCE     =       -ffree-form  -ffree-line-length-none
+F90FLAGS       =       -g -fconvert=big-endian -fbounds-check -fno-range-check -fno-underscoring
+MODFLAG        =       -I
+LDFLAGS        =       
+CPP            =       cpp
+CPPFLAGS       =       -C -P -traditional -D_GFORTRAN_ # -D_HRLDAS_URBAN_
+LIBS           =       
+LIBJASPER      =       -ljpeg -L${main}/HRLDAS/LIBRARIES/grib2/lib -ljasper
+INCJASPER      =       -I${main}/HRLDAS/LIBRARIES/grib2/include
+NETCDFMOD      =       -I${main}/HRLDAS/LIBRARIES/netcdf/include
+NETCDFLIB      =       -L${main}/HRLDAS/LIBRARIES/netcdf/lib -lnetcdf -lnetcdff
+BZIP2          =       NO
+BZIP2_LIB      =       -lbz2
+BZIP2_INCLUDE  =       -I/opt/local/include
+RM             =       rm -f
+CC             =       gcc
+
