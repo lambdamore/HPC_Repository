@@ -21,14 +21,14 @@ ln -sf $main/WPS/metgrid/METGRID.TBL metgrid/METGRID.TBL
 cd ..
 mkdir WRF
 cd WRF
-ln -sf $main/WRFV3/run/*_DATA*  . 
-ln -sf $main/WRFV3/run/ETAMP*  . 
-ln -sf $main/WRFV3/run/*.TBL  . 
-ln -sf $main/WRFV3/run/tr*  . 
-ln -sf $main/WRFV3/run/*.txt . 
-ln -sf $main/WRFV3/run/*.tbl  . 
-ln -sf $main/WRFV3/run/*.formatted  . 
-ln -sf $main/WRFV3/main/*.exe . 
+ln -sf $main/WRF/run/*_DATA*  . 
+ln -sf $main/WRF/run/ETAMP*  . 
+ln -sf $main/WRF/run/*.TBL  . 
+ln -sf $main/WRF/run/tr*  . 
+ln -sf $main/WRF/run/*.txt . 
+ln -sf $main/WRF/run/*.tbl  . 
+ln -sf $main/WRF/run/*.formatted  . 
+ln -sf $main/WRF/main/*.exe . 
 ln -sf ../WPS/met_em* .
 
-cp $main/WRFV3/run/namelist.input .
+cp $main/WRF/run/namelist.input .
