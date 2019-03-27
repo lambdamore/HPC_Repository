@@ -1,5 +1,5 @@
 #!/bin/csh
-setenv main /pub/baoxianp/Build_WRF #set to WRF directory
+setenv main /pub/baoxianp/WRFV4 #set to WRF directory
 mkdir CaseDomain
 cd CaseDomain
 mkdir WPS
